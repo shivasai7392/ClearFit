@@ -1,9 +1,6 @@
 package com.practice.clearfit.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -22,4 +19,8 @@ public class Centre extends BaseModel{
     private User administrator;
     @OneToMany(mappedBy = "centre")
     private List<CentreTiming> centreTimings;
+    @Enumerated(EnumType.ORDINAL)
+    @ElementCollection
+    @Column(name = "workout_type")
+    private List<WorkOutType> workOutTypes;
 }

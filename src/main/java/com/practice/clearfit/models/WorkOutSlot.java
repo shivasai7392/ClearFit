@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.CreatedDate;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -18,7 +19,7 @@ public class WorkOutSlot extends BaseModel{
     private int startHour;
     private int endHour;
     @CreatedDate
-    private Date slotDate;
+    private LocalDate slotDate;
     @ManyToOne
     private Centre centre;
     @OneToMany
